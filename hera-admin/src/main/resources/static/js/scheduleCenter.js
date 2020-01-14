@@ -363,6 +363,47 @@ layui.use(['table'], function () {
                 }
             })
         });
+        
+        
+        /**
+         * 添加发布任务组的初始化操作
+         */
+        $('#groupOperate [name="addRlsApp"]').on('click', function () {
+            $('#addRlsAppModal .modal-title').text(focusItem.name + "进行发布");
+            $('#addRlsAppModal [name="jobName"]').val("");
+            $('#addRlsAppModal').modal('show');
+        });
+        
+        /**
+         * 确认发布任务组
+         */
+        $('#addRlsAppModal [name="addBtn"]').on('click', function () {
+            let name = $('#addJobModal [name="jobName"]').val();
+            if (name == undefined || name == null || name.trim() == "") {
+                alert("任务名不能为空");
+                return;
+            }
+            $.ajax({
+                url: base_url + "/scheduleCenter/addRlsApp.do",
+                type: "post",
+                data: {
+                    name: name,
+                    runType: type,
+                    parentId: focusId
+                },
+                success: function (data) {
+                    if (data.success == true) {
+                        setCurrentId(data.message)
+                        location.reload(false);
+                    } else {
+                        alert(data.message);
+                    }
+
+                }
+            })
+        });
+        
+        
         /**
          * 选择框事件 动态设置编辑区
          */

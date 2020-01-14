@@ -670,6 +670,16 @@
                                         </button>
 
                                     </li>
+                                    
+                                    <br>
+                                    <li>
+                                        <button class="btn  btn-xs btn-primary btn-block" type="button" name="addRlsApp">
+                                            发布任务组
+                                        </button>
+
+                                    </li>
+                                    
+                                    
                                     <#--     <br>
                                          <li>
                                              <button class="btn  btn-xs btn-primary btn-block" type="button">关注组下任务</button>
@@ -886,6 +896,44 @@
         </div>
     </div>
 </div>
+
+
+
+<div class="modal fade" id="addRlsAppModal" tabindex="-1" role="dialog" aria-labelledby="addRlsApp"
+     aria-hidden="true">
+    <div class="modal-dialog" style="height:100px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">发布任务组</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4 col-lg-4 col-md-4">说明</label>
+                                <div class="col-sm-8 col-lg-8 col-md-8 ">
+                                    <input class="form-control" type="text" name="jobName">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info add-btn" name="addBtn">添加</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="modal fade" id="addGroupModal" tabindex="-1" role="dialog" aria-labelledby="addGroupModal"
      aria-hidden="true">
     <div class="modal-dialog" style="height:100px;">
