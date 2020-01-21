@@ -1,0 +1,47 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "channel": 1
+            }
+        },
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                    "username": "${reader_username}",
+                    "password": "${reader_password}",
+                    "connection": [
+                            {
+                             "jdbcUrl": ["${reader_jdbcurl}"
+                                ],
+                             "querySql":["${reader_querySql}"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "writer": {
+                    "name": "mysqlwriter",
+                    "parameter": {
+                    "column": ["*"],
+                    "preSql": ["${writer_preSql}"],
+                    "postSql": ["${writer_postSql}"],
+                    "connection": [
+                            {
+                                "jdbcUrl":"${writer_jdbcUrl}",
+                                "table":["${writer_tableName}"]
+                            }
+                        ],
+                    "username": "${writer_username}",
+                    "password": "${writer_password}",
+                    "writeMode": "insert"
+                    }
+                }
+
+
+            }
+        ]
+    }
+}
